@@ -1,0 +1,22 @@
+Body{
+    margin: 0;
+    background-color: #edbf91;
+}
+
+#toevoeg {
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* Bij hover */
+#toevoeg:hover {
+    scale: 120;
+    font-size: 110%;
+}
+
+/* Bezochte links */
+#toevoeg:visited {
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,0 +1,29 @@
+#grid1{
+    display: grid;
+    grid-template-columns: repeat(5, 3fr);
+    gap: 20px;
+    margin-top: 50px;
+    width: 100%;
+
+    text-align: center;
+}
+
+#grid2{
+    display: grid;
+    grid-template-columns: repeat(3, 4fr);
+    gap: 20px;
+    margin-top: 50px;
+    width: 100%;
+
+    text-align: center;
+}
+
+#grid3{
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    gap: 20px;
+    margin-top: 50px;
+    width: 100%;
+
+    text-align: center;
+}
