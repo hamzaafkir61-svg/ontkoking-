@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bekijken</title>
+    <link rel="stylesheet" href="./CSS/Home.css">
+    <link rel="stylesheet" href="CSS/Grid.css">
+    <link rel="stylesheet" href="CSS/Aanmakken.css">
+    <script src="./home.js" defer></script>
+</head>
+    <body>
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+                    <span></span>
+                </button>
+
+                <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                    <a href="#">login</a>
+                    <a href="#">je recepten</a>
+                    <a href="#">recepten bekijken</a>
+                </nav>
+            </div>
+
+            <div class="brand">Ontkoking</div>
+            <div class="footer">
+                <div class="footer-item">Contact</div>
+                <div class="footer-item">Privacy</div>
+                <div class="footer-item">Terms</div>
+            </div>
+        </header>
+
+    <form action="updateverwerk.php" method="post">
+                Titel:<br>
+                <input type="text" name="titel" required>
+
+                <div id="grid2">
+
+                <div>
+                <div>
+                ingredienten:
+                <textarea id="ingredienten" name="ingredienten" required cols="30" rows="20"></textarea>
+                </div>
+                Nieuwe foto (laat leeg om de huidige te behouden):<br>
+                <input type="file" name="picture" accept="image/*">
+            </div>
+
+                <div>
+                Blog:<br>
+                <textarea name="blog" required cols="70" rows="55"></textarea>
+                        </div>
+                            <div>
+                                Nieuwe foto (laat leeg om de huidige te behouden):<br>
+                <input type="file" name="picture" accept="image/*">
+        </div>    
+            </div>
+        <input type="submit" value="Bewerken">
+
+
+
+
+    </body>
+</html>
