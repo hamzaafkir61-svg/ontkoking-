@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./CSS/Home.css">
+    <link rel="stylesheet" href="./CSS/Grid.css">
+    <script src="./scripts/home.js" defer></script>
+
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-left">
+            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+                <?php if (empty($_SESSION['user_id'])): ?>
+                <a href="pages/login.php">login</a>
+                <?php else: ?>
+                <a href="Data/uitloggen.php">uitloggen</a>
+                <?php endif; ?>
+                <a href="pages/ReceptOverzicht.php">je recepten</a>
+                <a href="index.php">recepten bekijken</a>
+            </nav>
+        </div>
+
+        <div class="brand">Ontkoking</div>
+        <div class="footer">
+            <div class="footer-item">Contact</div>
+            <div class="footer-item">Privacy</div>
+            <div class="footer-item">Terms</div>
+        </div>
+    </header>
+
+    <div class="hero">
+            <select id="options">
+                <option value="First">First</option>
+                <option value="Second">Second</option>
+                <option value="Third">Third</option>
+            </select>
+    </div>
+
+    <!--de eerste 4 recepten met de foto in het midden-->
+    <div id="grid1">
+        <?php foreach ($bovenste as $i => $recept): ?>
+            <?php if ($i == 2): ?>
+        <img id="minhero" src="assets/hero.png" alt="">
+            <?php endif; ?>
+        <a class="grid-item" href="pages/recept.php?id=<?= $recept['id'] ?>"><img src="<?= e($recept['foto'] ?: $recept['foto2'] ?: 'assets/hero.png') ?>" alt="<?= e($recept['titel']) ?>">
+        <div><h5><?= e($recept['titel']) ?></h5></div></a>
+        <?php endforeach; ?>
+        <?php if (count($recepten) < 3): ?>
+        <img id="minhero" src="assets/hero.png" alt="">
+        <?php endif; ?>
+    </div>
+
+    <!--de rest van de recepten-->
+        <div id="grid2">
+        <?php foreach ($rest as $recept): ?>
+        <a class="grid-item" href="pages/recept.php?id=<?= $recept['id'] ?>"><img src="<?= e($recept['foto'] ?: $recept['foto2'] ?: 'assets/hero.png') ?>" alt="<?= e($recept['titel']) ?>">
+        <div><h5><?= e($recept['titel']) ?></h5></div></a>
+        <?php endforeach; ?>
+    </div>
+</body>
+</html>
