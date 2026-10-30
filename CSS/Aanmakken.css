@@ -3,7 +3,7 @@ Body{
     background-color: #edbf91;
 }
 
-body > form {
+.page-body > form {
     padding: 76px 20px 24px;
 }
 
@@ -22,6 +22,31 @@ body > form {
     font: inherit;
 }
 
-#ingredienten{
-    margin-bottom: 30vh;
+.page-body > form input,
+.page-body > form textarea {
+    max-width: 100%;
+    font: inherit;
+}
+
+.page-body > form textarea {
+    display: block;
+    width: 100%;
+    resize: vertical;
+}
+
+@media (max-width: 900px) {
+    .page-body > form #grid2 {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: left;
+        gap: 24px;
+    }
+
+    .page-body > form textarea {
+        height: 240px;
+    }
+
+    .page-body > form input[type="submit"] {
+        margin-top: 24px;
+        min-height: 44px;
+    }
 }

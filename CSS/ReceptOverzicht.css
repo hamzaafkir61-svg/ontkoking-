@@ -17,21 +17,6 @@
     backdrop-filter: none;
 }
 
-.header-link {
-    color: #541b17;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.pagina-titel {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 18px;
-    font-weight: normal;
-}
-
 .recepten-inhoud {
     width: 78%;
     max-width: 1000px;
@@ -92,22 +77,29 @@
 .recept-toevoegen {
     display: inline-flex;
     align-items: center;
-    gap: 16px;
+    justify-content: center;
+    gap: 8px;
     margin-top: 28px;
-    color: #b72d30;
+    max-width: 100%;
+    min-height: 48px;
+    padding: 10px 16px;
+    border: 1px solid #651b16;
+    border-radius: 3px;
+    background: #b72d30;
+    color: #fff5df;
     text-decoration: none;
-    font-size: clamp(18px, 2.2vw, 24px);
+    text-align: center;
+    font-size: 16px;
 }
 
 .toevoegen-plus {
-    font-size: 88px;
-    font-weight: bold;
-    line-height: .8;
-    color: #4b0d08;
+    font-size: 22px;
+    line-height: 1;
+    color: inherit;
 }
 
-.recept-toevoegen:hover span:first-child {
-    text-decoration: underline;
+.recept-toevoegen:hover {
+    background: #942225;
 }
 
 .recepten-pagina a:focus-visible {
@@ -119,23 +111,10 @@
     color: #651b16;
 }
 
-.recepten-footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 92px;
-    background: #b72d30;
-    font-size: 14px;
-}
 
 @media (max-width: 600px) {
     .recepten-topbar {
         padding: 0 14px;
-    }
-
-    .header-link,
-    .pagina-titel {
-        font-size: 16px;
     }
 
     .recepten-inhoud {
@@ -143,7 +122,8 @@
     }
 
     .recepten-uitgelicht {
-        gap: 5%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
     }
 
     .recepten-overig {
@@ -152,7 +132,8 @@
     }
 
     .recept-acties a {
-        padding: 9px 2px;
+        min-height: 44px;
+        padding: 14px 2px;
         font-size: 12px;
     }
 }

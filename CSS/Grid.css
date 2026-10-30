@@ -1,6 +1,6 @@
 #grid1{
     display: grid;
-    grid-template-columns: repeat(5, 3fr);
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 20px;
     margin-top: 50px;
     width: 100%;
@@ -10,7 +10,7 @@
 
 #grid2{
     display: grid;
-    grid-template-columns: repeat(3, 4fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 20px;
     margin-top: 50px;
     width: 100%;
@@ -20,7 +20,7 @@
 
 #grid3{
     display: grid;
-    grid-template-columns: repeat(4, 3fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
     margin-top: 50px;
     width: 100%;
@@ -36,4 +36,22 @@
 a.grid-item {
     color: inherit;
     text-decoration: none;
+}
+
+#grid1 > *, #grid2 > *, #grid3 > * {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 900px) {
+    #grid1, #grid2, #grid3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    #grid1, #grid2, #grid3 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
 }

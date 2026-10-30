@@ -3,6 +3,9 @@
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #f5f7fb;
@@ -36,8 +39,8 @@ body {
 }
 
 .menu-button {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     border: 0;
     border-radius: 10px;
     background: #111827;
@@ -104,6 +107,10 @@ body {
     left: 50%;
     transform: translateX(-50%);
     color: #111827;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(24px, 4vw, 30px);
+    font-weight: bold;
+    line-height: 1;
 }
 
 .nav-menu {
@@ -111,6 +118,8 @@ body {
     top: 46px;
     left: 0;
     width: min(260px, calc(100vw - 24px));
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
     background: beige;
     border: 1px solid rgba(17, 24, 39, 0.06);
     border-radius: 14px;
@@ -169,10 +178,50 @@ p {
     color: #4b5563;
 }
 
-.footer {
-    min-height: 100vh;
+.page-body {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 48px;
+    overflow-wrap: anywhere;
+}
+
+.page-body img {
+    max-width: 100%;
+}
+
+.content input {
+    max-width: 100%;
+    font: inherit;
+}
+
+.site-footer {
+    background: #b72d30;
+    color: #fff5df;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.site-footer p {
+    color: inherit;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.site-footer-nav {
     display: flex;
-    align-items: end;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+}
+
+.site-footer a {
+    color: inherit;
+    font-size: 14px;
+}
+
+.site-footer a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
 }
 
 .hero {
@@ -199,4 +248,34 @@ p {
 #minhero {
     width: 100%;
     height: 100%;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        width: calc(100% - 24px);
+        margin-left: 12px;
+        height: 35vh;
+    }
+
+    #options {
+        width: 75%;
+    }
+
+    .content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .content input {
+        min-height: 44px;
+    }
+
+    .site-footer-nav a {
+        display: inline-block;
+        padding: 12px 0;
+    }
 }

@@ -18,12 +18,9 @@
         </div>
 
         <div class="brand">Ontkoking</div>
-        <div class="footer">
-            <div class="footer-item">Contact</div>
-            <div class="footer-item">Privacy</div>
-            <div class="footer-item">Terms</div>
-        </div>
     </header>
+
+    <div class="page-body">
 
     <div class="content">
         <div class="card">
@@ -47,5 +44,8 @@
             <?php endif; ?>
         </div>
     </div>
+    </div>
+
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/footer.php'; ?>
 </body>
 </html>

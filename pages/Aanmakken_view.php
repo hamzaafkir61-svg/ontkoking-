@@ -20,12 +20,9 @@
             </div>
 
             <div class="brand">Ontkoking</div>
-            <div class="footer">
-                <div class="footer-item">Contact</div>
-                <div class="footer-item">Privacy</div>
-                <div class="footer-item">Terms</div>
-            </div>
         </header>
+
+    <div class="page-body">
 
     <form action="../Data/updateverwerk.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= e($recept['id']) ?>">
@@ -67,5 +64,8 @@
 
 
 
-    </body>
+        </div>
+
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/footer.php'; ?>
+</body>
 </html>
