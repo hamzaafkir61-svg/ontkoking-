@@ -35,6 +35,11 @@ function e($tekst) {
 // stuurt je naar login als je niet ingelogd bent
 function moetInloggen() {
     if (empty($_SESSION['user_id'])) {
+        $pagina = basename($_SERVER['SCRIPT_NAME'] ?? '');
+        if (in_array($pagina, ['ReceptOverzicht.php', 'Aanmakken.php'], true)) {
+            $_SESSION['na_login'] = $pagina;
+        }
+        $_SESSION['login_melding'] = 'Log eerst in of maak een account aan om je recepten te bekijken of een recept aan te maken.';
         header('Location: ../pages/login.php');
         exit;
     }
