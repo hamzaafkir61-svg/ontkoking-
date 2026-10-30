@@ -10,22 +10,7 @@
     <script src="../scripts/home.js" defer></script>
 </head>
     <body>
-        <header class="topbar">
-            <div class="topbar-left">
-                <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
-                    <span></span>
-                </button>
-
-                <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
-            </div>
-
-            <div class="brand">Ontkoking</div>
-            <div class="footer">
-                <div class="footer-item">Contact</div>
-                <div class="footer-item">Privacy</div>
-                <div class="footer-item">Terms</div>
-            </div>
-        </header>
+    <?php $terug = '../'; include __DIR__ . '/../includes/Header.php'; ?>
 
     <form action="../Data/updateverwerk.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= e($recept['id']) ?>">

@@ -10,22 +10,7 @@
 
 </head>
 <body>
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-            </button>
-
-            <?php $menuBasis = ''; include __DIR__ . '/includes/menu.php'; ?>
-        </div>
-
-        <div class="brand">Ontkoking</div>
-        <div class="footer">
-            <div class="footer-item">Contact</div>
-            <div class="footer-item">Privacy</div>
-            <div class="footer-item">Terms</div>
-        </div>
-    </header>
+    <?php include __DIR__ . '/includes/Header.php'; ?>
 
     <div class="hero">
             <select id="options">
@@ -45,7 +30,6 @@
         <div><h5><?= e($recept['titel']) ?></h5></div></a>
         <?php endforeach; ?>
         <?php if (count($recepten) < 3): ?>
-        <img id="minhero" src="assets/hero.png" alt="">
         <?php endif; ?>
     </div>
 
