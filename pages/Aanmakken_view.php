@@ -54,6 +54,6 @@
 
 
 
-    <?php include __DIR__ . '/../includes/Footer.php'; ?>
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/Footer.php'; ?>
     </body>
 </html>
