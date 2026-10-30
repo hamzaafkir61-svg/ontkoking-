@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bekijken</title>
-    <link rel="stylesheet" href="./CSS/Home.css">
-    <link rel="stylesheet" href="CSS/Grid.css">
-    <link rel="stylesheet" href="CSS/Aanmakken.css">
-    <script src="./home.js" defer></script>
+    <link rel="stylesheet" href="../CSS/Home.css">
+    <link rel="stylesheet" href="../CSS/Grid.css">
+    <link rel="stylesheet" href="../CSS/Aanmakken.css">
+    <script src="../scripts/home.js" defer></script>
 </head>
     <body>
         <header class="topbar">
@@ -17,9 +17,9 @@
                 </button>
 
                 <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
-                    <a href="#">login</a>
-                    <a href="#">je recepten</a>
-                    <a href="#">recepten bekijken</a>
+                    <a href="../Data/uitloggen.php">uitloggen</a>
+                    <a href="ReceptOverzicht.php">je recepten</a>
+                    <a href="../index.php">recepten bekijken</a>
                 </nav>
             </div>
 
@@ -31,16 +31,17 @@
             </div>
         </header>
 
-    <form action="updateverwerk.php" method="post">
+    <form action="../Data/updateverwerk.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="<?= e($recept['id']) ?>">
                 Titel:<br>
-                <input type="text" name="titel" required>
+                <input type="text" name="titel" required value="<?= e($recept['titel']) ?>">
 
                 <div id="grid2">
 
                 <div>
                 <div>
                 ingredienten:
-                <textarea id="ingredienten" name="ingredienten" required cols="30" rows="20"></textarea>
+                <textarea id="ingredienten" name="ingredienten" required cols="30" rows="20"><?= e($recept['ingredienten']) ?></textarea>
                 </div>
                 Nieuwe foto (laat leeg om de huidige te behouden):<br>
                 <input type="file" name="picture" accept="image/*">
@@ -48,15 +49,15 @@
 
                 <div>
                 Blog:<br>
-                <textarea name="blog" required cols="70" rows="55"></textarea>
+                <textarea name="blog" required cols="70" rows="55"><?= e($recept['blog']) ?></textarea>
                         </div>
                             <div>
                                 Nieuwe foto (laat leeg om de huidige te behouden):<br>
-                <input type="file" name="picture" accept="image/*">
-        </div>    
+                <input type="file" name="picture2" accept="image/*">
+        </div>
             </div>
-        <input type="submit" value="Bewerken">
-
+        <input type="submit" value="<?= $recept['id'] ? 'Bewerken' : 'Aanmaken' ?>">
+    </form>
 
 
 
