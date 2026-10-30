@@ -10,6 +10,8 @@
 <body>
     <?php $terug = '../'; $paginaTitel = 'login'; include __DIR__ . '/../includes/Header.php'; ?>
 
+    <div class="page-body">
+
     <div class="content">
         <div class="card">
             <h1>Login</h1>
@@ -25,6 +27,8 @@
             </form>
         </div>
     </div>
-    <?php include __DIR__ . '/../includes/Footer.php'; ?>
+    </div>
+
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>

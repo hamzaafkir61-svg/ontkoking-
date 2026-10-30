@@ -11,6 +11,8 @@
 <body class="recepten-pagina">
     <?php $terug = '../'; $paginaTitel = 'je recepten'; include __DIR__ . '/../includes/Header.php'; ?>
 
+    <div class="page-body">
+
     <main class="recepten-inhoud">
         <?php foreach ([array_slice($recepten, 0, 3), array_slice($recepten, 3)] as $groepIndex => $groep): ?>
             <?php if ($groep): ?>
@@ -35,11 +37,13 @@
         <?php endif; ?>
 
         <a class="recept-toevoegen" href="Aanmakken.php">
-            <span>maak een nieuwe blog</span>
+            <span>Maak een nieuwe blog</span>
             <span class="toevoegen-plus" aria-hidden="true">+</span>
         </a>
     </main>
 
-    <?php include __DIR__ . '/../includes/Footer.php'; ?>
+    </div>
+
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>

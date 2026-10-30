@@ -10,6 +10,8 @@
 <body>
     <?php $terug = '../'; $paginaTitel = $recept['titel']; include __DIR__ . '/../includes/Header.php'; ?>
 
+    <div class="page-body">
+
     <div class="content">
         <div class="card">
             <h1><?= e($recept['titel']) ?></h1>
@@ -32,6 +34,8 @@
             <?php endif; ?>
         </div>
     </div>
-    <?php include __DIR__ . '/../includes/Footer.php'; ?>
+    </div>
+
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>
