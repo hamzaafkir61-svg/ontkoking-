@@ -8,7 +8,7 @@
     <script src="../scripts/home.js" defer></script>
 </head>
 <body>
-    <?php $terug = '../'; include __DIR__ . '/../includes/Header.php'; ?>
+    <?php $terug = '../'; $paginaTitel = 'login'; include __DIR__ . '/../includes/Header.php'; ?>
 
     <div class="content">
         <div class="card">
@@ -25,5 +25,6 @@
             </form>
         </div>
     </div>
+    <?php include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>

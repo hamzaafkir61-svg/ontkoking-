@@ -169,12 +169,6 @@ p {
     color: #4b5563;
 }
 
-.footer {
-    min-height: 100vh;
-    display: flex;
-    align-items: end;
-}
-
 .hero {
     background-image: url("/assets/hero.png");
     background-size: cover;
@@ -199,4 +193,63 @@ p {
 #minhero {
     width: 100%;
     height: 100%;
+}
+
+/* gedeelde header (includes/Header.php) */
+.recepten-topbar {
+    position: relative;
+    flex-shrink: 0;
+    height: 64px;
+    padding: 0 28px;
+    background: #b72d30;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.header-link {
+    color: #541b17;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.pagina-titel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* gedeelde footer (includes/Footer.php) */
+.recepten-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 92px;
+    background: #b72d30;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .recepten-topbar {
+        padding: 0 14px;
+    }
+
+    .header-link,
+    .pagina-titel {
+        font-size: 16px;
+    }
+}
+
+/* footer altijd onderaan de pagina */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.recepten-footer {
+    margin-top: auto;
 }

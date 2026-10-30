@@ -9,17 +9,7 @@
     <script src="../scripts/home.js" defer></script>
 </head>
 <body class="recepten-pagina">
-    <header class="topbar recepten-topbar">
-        <div class="topbar-left">
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span>
-            </button>
-            <a class="header-link" href="../index.php">home</a>
-            <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
-        </div>
-        <h1 class="pagina-titel">je recepten</h1>
-        <a class="header-link" href="login.php">login</a>
-    </header>
+    <?php $terug = '../'; $paginaTitel = 'je recepten'; include __DIR__ . '/../includes/Header.php'; ?>
 
     <main class="recepten-inhoud">
         <?php foreach ([array_slice($recepten, 0, 3), array_slice($recepten, 3)] as $groepIndex => $groep): ?>
@@ -50,10 +40,6 @@
         </a>
     </main>
 
-    <footer class="recepten-footer" aria-label="Maaltijden">
-        <span>ontbijt</span>
-        <span>Lunch</span>
-        <span>Avond eten</span>
-    </footer>
+    <?php include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>

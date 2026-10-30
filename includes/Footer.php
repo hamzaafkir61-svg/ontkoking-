@@ -1,5 +1,5 @@
-        <div class="footer">
-            <div class="footer-item">Contact</div>
-            <div class="footer-item">Privacy</div>
-            <div class="footer-item">Terms</div>
-        </div>
+    <footer class="recepten-footer" aria-label="Maaltijden">
+        <span>ontbijt</span>
+        <span>Lunch</span>
+        <span>Avond eten</span>
+    </footer>

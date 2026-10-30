@@ -6,32 +6,6 @@
     color: #651b16;
 }
 
-.recepten-topbar {
-    position: relative;
-    flex-shrink: 0;
-    height: 64px;
-    padding: 0 28px;
-    background: #b72d30;
-    border: 0;
-    box-shadow: none;
-    backdrop-filter: none;
-}
-
-.header-link {
-    color: #541b17;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.pagina-titel {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 18px;
-    font-weight: normal;
-}
-
 .recepten-inhoud {
     width: 78%;
     max-width: 1000px;
@@ -119,25 +93,7 @@
     color: #651b16;
 }
 
-.recepten-footer {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 92px;
-    background: #b72d30;
-    font-size: 14px;
-}
-
 @media (max-width: 600px) {
-    .recepten-topbar {
-        padding: 0 14px;
-    }
-
-    .header-link,
-    .pagina-titel {
-        font-size: 16px;
-    }
-
     .recepten-inhoud {
         width: 88%;
     }

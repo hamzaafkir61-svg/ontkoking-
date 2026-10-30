@@ -40,5 +40,6 @@
         <div><h5><?= e($recept['titel']) ?></h5></div></a>
         <?php endforeach; ?>
     </div>
+    <?php include __DIR__ . '/includes/Footer.php'; ?>
 </body>
 </html>
