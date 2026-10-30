@@ -10,7 +10,9 @@
     <script src="../scripts/home.js" defer></script>
 </head>
     <body>
-    <?php $terug = '../'; $paginaTitel = $recept['id'] ? 'recept bewerken' : 'recept aanmaken'; include __DIR__ . '/../includes/Header.php'; ?>
+    <?php $terug = '../'; include __DIR__ . '/../includes/Header.php'; ?>
+
+    <div class="page-body">
 
     <form action="../Data/updateverwerk.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?= e($recept['id']) ?>">
