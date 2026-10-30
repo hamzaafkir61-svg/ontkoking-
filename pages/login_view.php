@@ -8,17 +8,7 @@
     <script src="../scripts/home.js" defer></script>
 </head>
 <body>
-    <header class="topbar">
-        <div class="topbar-left">
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
-                <span></span>
-            </button>
-
-            <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
-        </div>
-
-        <div class="brand">Ontkoking</div>
-    </header>
+    <?php $terug = '../'; include __DIR__ . '/../includes/Header.php'; ?>
 
     <div class="page-body">
 
@@ -39,6 +29,6 @@
     </div>
     </div>
 
-    <?php $footerBasis = '../'; include __DIR__ . '/../includes/footer.php'; ?>
+    <?php $footerBasis = '../'; include __DIR__ . '/../includes/Footer.php'; ?>
 </body>
 </html>
