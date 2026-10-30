@@ -8,6 +8,12 @@ $naLogin = $_SESSION['na_login'] ?? 'ReceptOverzicht.php';
 if (!in_array($naLogin, ['ReceptOverzicht.php', 'Aanmakken.php'], true)) {
     $naLogin = 'ReceptOverzicht.php';
 }
+
+if (!empty($_SESSION['user_id'])) {
+    header('Location: ' . $naLogin);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $naam = trim($_POST['gebruikersnaam'] ?? '');
     $wachtwoord = $_POST['wachtwoord'] ?? '';

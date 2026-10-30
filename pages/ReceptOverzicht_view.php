@@ -9,15 +9,7 @@
     <script src="../scripts/home.js" defer></script>
 </head>
 <body class="recepten-pagina">
-    <header class="topbar recepten-topbar">
-        <div class="topbar-left">
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
-                <span></span>
-            </button>
-            <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
-        </div>
-        <div class="brand">Ontkoking</div>
-    </header>
+    <?php $terug = '../'; $paginaTitel = 'je recepten'; include __DIR__ . '/../includes/Header.php'; ?>
 
     <div class="page-body">
 
