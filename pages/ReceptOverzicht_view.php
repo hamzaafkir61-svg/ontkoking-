@@ -1,50 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Je recepten</title>
-        <link rel="stylesheet" href="../CSS/Home.css">
-        <link rel="stylesheet" href="../CSS/Grid.css">
-        <link rel="stylesheet" href="../CSS/ReceptOverzicht.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-        <script src="../scripts/home.js" defer></script>
+    <title>Je recepten — Ontkoking</title>
+    <link rel="stylesheet" href="../CSS/Home.css">
+    <link rel="stylesheet" href="../CSS/ReceptOverzicht.css">
+    <script src="../scripts/home.js" defer></script>
 </head>
-<body>
-    <header class="topbar">
+<body class="recepten-pagina">
+    <header class="topbar recepten-topbar">
         <div class="topbar-left">
-            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false">
+            <button class="menu-button" id="menuButton" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
                 <span></span>
             </button>
-
+            <a class="header-link" href="../index.php">home</a>
             <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
         </div>
-
-        <div class="brand">Ontkoking</div>
-        <div class="footer">
-            <div class="footer-item">Contact</div>
-            <div class="footer-item">Privacy</div>
-            <div class="footer-item">Terms</div>
-        </div>
+        <h1 class="pagina-titel">je recepten</h1>
+        <a class="header-link" href="login.php">login</a>
     </header>
 
-
-        <div id="grid2">
-        <?php foreach ($recepten as $recept): ?>
-        <div class="grid-item">
-        <h3><?= e($recept['titel']) ?></h3>
-        <img src="../<?= e($recept['foto'] ?: 'assets/hero.png') ?>" alt="<?= e($recept['titel']) ?>"><br>
-        <a href="Aanmakken.php?id=<?= $recept['id'] ?>">bewerken</a><br>
-        <a href="../Data/verwijder.php?id=<?= $recept['id'] ?>" onclick="return confirm('Weet je het zeker?')">verwijderen</a>
-        </div>
+    <main class="recepten-inhoud">
+        <?php foreach ([array_slice($recepten, 0, 3), array_slice($recepten, 3)] as $groepIndex => $groep): ?>
+            <?php if ($groep): ?>
+            <section class="recepten-grid <?= $groepIndex === 0 ? 'recepten-uitgelicht' : 'recepten-overig' ?>" aria-label="<?= $groepIndex === 0 ? 'Je nieuwste recepten' : 'Je overige recepten' ?>">
+                <?php foreach ($groep as $recept): ?>
+                <article class="recept-kaart">
+                    <a class="recept-foto" href="recept.php?id=<?= (int)$recept['id'] ?>">
+                        <img src="../<?= e($recept['foto'] ?: $recept['foto2'] ?: 'assets/hero.png') ?>" alt="<?= e($recept['titel']) ?>">
+                    </a>
+                    <div class="recept-acties">
+                        <a href="Aanmakken.php?id=<?= (int)$recept['id'] ?>" aria-label="<?= e($recept['titel']) ?> bewerken">bewerken</a>
+                        <a href="../Data/verwijder.php?id=<?= (int)$recept['id'] ?>" aria-label="<?= e($recept['titel']) ?> verwijderen" onclick="return confirm('Weet je zeker dat je dit recept wilt verwijderen?')">verwijderen</a>
+                    </div>
+                </article>
+                <?php endforeach; ?>
+            </section>
+            <?php endif; ?>
         <?php endforeach; ?>
 
         <?php if (!$recepten): ?>
-        <p>Je hebt nog geen recepten.</p>
+        <p class="lege-recepten">Je hebt nog geen recepten. Maak je eerste blog aan!</p>
         <?php endif; ?>
-        </div>
 
-        <a id="toevoeg" href="Aanmakken.php"><h2>Maak een nieuwe blog <i class="fa-solid fa-plus"></i></h2></a>
+        <a class="recept-toevoegen" href="Aanmakken.php">
+            <span>maak een nieuwe blog</span>
+            <span class="toevoegen-plus" aria-hidden="true">+</span>
+        </a>
+    </main>
 
+    <footer class="recepten-footer" aria-label="Maaltijden">
+        <span>ontbijt</span>
+        <span>Lunch</span>
+        <span>Avond eten</span>
+    </footer>
 </body>
 </html>

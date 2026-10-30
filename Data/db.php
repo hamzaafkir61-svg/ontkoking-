@@ -20,12 +20,19 @@ CREATE TABLE recepten (
   titel        TEXT NOT NULL,
   ingredienten TEXT,
   blog         TEXT,
+  maaltijd     TEXT,
   foto         TEXT,
   foto2        TEXT,
   user_id      INTEGER NOT NULL,
   aangemaakt   TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 SQL);
+}
+
+// Bestaande databases bijwerken zonder recepten te verwijderen.
+$kolommen = $db->query('PRAGMA table_info(recepten)')->fetchAll(PDO::FETCH_COLUMN, 1);
+if (!in_array('maaltijd', $kolommen, true)) {
+    $db->exec('ALTER TABLE recepten ADD COLUMN maaltijd TEXT');
 }
 
 function e($tekst) {

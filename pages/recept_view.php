@@ -29,6 +29,9 @@
         <div class="card">
             <h1><?= e($recept['titel']) ?></h1>
             <p>door <?= e($recept['gebruikersnaam']) ?></p>
+            <?php if (!empty($recept['maaltijd'])): ?>
+            <p>Maaltijd: <?= e(ucfirst($recept['maaltijd'])) ?></p>
+            <?php endif; ?>
             <?php if ($recept['foto']): ?>
             <img src="../<?= e($recept['foto']) ?>" alt="" style="width: 100%;">
             <?php endif; ?>

@@ -3,6 +3,25 @@ Body{
     background-color: #edbf91;
 }
 
+body > form {
+    padding: 76px 20px 24px;
+}
+
+.maaltijd-keuze {
+    margin-top: 20px;
+}
+
+.maaltijd-keuze label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.maaltijd-keuze select {
+    padding: 10px 12px;
+    max-width: 100%;
+    font: inherit;
+}
+
 #ingredienten{
     margin-bottom: 30vh;
 }

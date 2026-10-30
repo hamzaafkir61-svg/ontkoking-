@@ -32,6 +32,16 @@
                 Titel:<br>
                 <input type="text" name="titel" required value="<?= e($recept['titel']) ?>">
 
+                <div class="maaltijd-keuze">
+                    <label for="maaltijd">Voor welke maaltijd is je recept?</label>
+                    <select id="maaltijd" name="maaltijd" required>
+                        <option value="">Kies een maaltijd</option>
+                        <?php foreach (['ontbijt' => 'Ontbijt', 'lunch' => 'Lunch', 'avondeten' => 'Avondeten'] as $waarde => $label): ?>
+                        <option value="<?= $waarde ?>" <?= ($recept['maaltijd'] ?? '') === $waarde ? 'selected' : '' ?>><?= $label ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
                 <div id="grid2">
 
                 <div>
