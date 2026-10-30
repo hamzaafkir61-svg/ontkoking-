@@ -1,0 +1,4 @@
+# de database zelf mag niet gedownload worden
+<Files "ontkoking.db">
+    Require all denied
+</Files>
