@@ -16,11 +16,7 @@
                     <span></span>
                 </button>
 
-                <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
-                    <a href="../Data/uitloggen.php">uitloggen</a>
-                    <a href="ReceptOverzicht.php">je recepten</a>
-                    <a href="../index.php">recepten bekijken</a>
-                </nav>
+                <?php $menuBasis = '../'; include __DIR__ . '/../includes/menu.php'; ?>
             </div>
 
             <div class="brand">Ontkoking</div>
